@@ -1,3 +1,4 @@
+.
 import streamlit as st
 import pandas as pd
 
@@ -10,8 +11,8 @@ titanic_link = 'Titanic.csv'
 titanic_data = pd.read_csv(titanic_link)
 st.dataframe(titanic_data.sample(10))
 
-st.write("GRAPHICS OF THE DIABETES DATASET")
-diabetes_link = 'diabetes.csv'
-diabetes_data = pd.read_csv(diabetes_link)
-st.dataframe(diabetes_data.sample(10))
-
+ #muestran a continuación:
+ fig, ax = plt.subplots()
+ ax.hist(titanic_data.fare)
+ st.header("Histograma del Titanic")
+ st.pyplot(fig)
